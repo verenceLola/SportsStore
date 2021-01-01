@@ -26,7 +26,7 @@ namespace SportsStore.Tests
             ProductController controller = new ProductController(mock.Object);
             controller.PageSize = 3;
 
-            ProductsListViewModel result = controller.List(2).ViewData.Model as ProductsListViewModel;
+            ProductsListViewModel result = controller.List(null, 2).ViewData.Model as ProductsListViewModel;
 
             Product[] prodArray = result.Products.ToArray();
             Assert.True(prodArray.Length == 2);
@@ -35,7 +35,8 @@ namespace SportsStore.Tests
         }
 
         [Fact]
-        public void Can_Send_Pagination_View_Model() {
+        public void Can_Send_Pagination_View_Model()
+        {
             Mock<IProductRepository> mock = new Mock<IProductRepository>();
             mock.Setup(m => m.Products).Returns(new Product[] {
                 new Product {ProductID = 1, Name = "P1"},
@@ -44,8 +45,8 @@ namespace SportsStore.Tests
                 new Product {ProductID = 4, Name = "P4"},
                 new Product {ProductID = 5, Name = "P5"},
             });
-            ProductController controller = new ProductController(mock.Object) {PageSize = 3};
-            ProductsListViewModel result = controller.List(2).ViewData.Model as ProductsListViewModel;
+            ProductController controller = new ProductController(mock.Object) { PageSize = 3 };
+            ProductsListViewModel result = controller.List(null, 2).ViewData.Model as ProductsListViewModel;
 
             PagingInfo pageInfo = result.PagingInfo;
             Assert.Equal(2, pageInfo.CurrentPage);
