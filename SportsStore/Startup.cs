@@ -21,13 +21,15 @@ namespace SportsStore
 
         public IConfiguration Configuration { get; }
 
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IProductRepository, FakeProductRepository>();
             services.AddControllersWithViews();
-            services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(Configuration["Data:SportStoreProducts:ConnectionString"]));
+            services.AddDbContext<ApplicationDBContext>(options => options.UseMySQL(Configuration.GetConnectionString("SportsStore")));
             services.AddTransient<IProductRepository, EFProductRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

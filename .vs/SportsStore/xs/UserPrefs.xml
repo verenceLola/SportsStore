@@ -1,24 +1,17 @@
-﻿<Properties StartupConfiguration="{A1DA1B45-C748-4A9B-83DA-815490DC7E22}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SportsStore/Properties/launchSettings.json">
-    <Files>
-      <File FileName="SportsStore/Properties/launchSettings.json" Line="12" Column="35" />
-    </Files>
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="SportsStore" expanded="True">
-            <Node name="SportsStore" expanded="True">
-              <Node name="Properties" expanded="True">
-                <Node name="launchSettings.json" selected="True" />
-              </Node>
-            </Node>
-          </Node>
+          <Node name="SportsStore" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.SportsStore FirstBuild="True" PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>SportsStore/SportsStore.csproj</String>
+  </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
