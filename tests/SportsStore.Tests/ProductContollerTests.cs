@@ -14,15 +14,15 @@ namespace SportsStore.Tests
         {
             Mock<IProductRepository> mock = new Mock<IProductRepository>();
             mock.Setup(m => m.Products).Returns(new Product[] {
-                new Product {ProductId = 1, Name = "P1"},
-                new Product {ProductId = 2, Name = "P2"},
+                new Product {ProductID = 1, Name = "P1"},
+                new Product {ProductID = 2, Name = "P2"},
                 new Product {ProductID = 3, Name = "P3"},
                 new Product {ProductID = 4, Name = "P4"},
-                new Product {ProductID = 5, Name = "P5"}
+                new Product {ProductID = 5, Name = "P5"},
             });
 
 
-            ProductContoller contoller = new ProductContoller(mock.Object);
+            ProductController contoller = new ProductController(mock.Object);
             contoller.PageSize = 3;
 
             IEnumerable<Product> result = contoller.List(2).ViewData.Model as IEnumerable<Product>;
