@@ -29,6 +29,8 @@ namespace SportsStore
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationDBContext>(options => options.UseMySQL(Configuration.GetConnectionString("SportsStore")));
             services.AddTransient<IProductRepository, EFProductRepository>();
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +51,7 @@ namespace SportsStore
 
             app.UseRouting();
             app.UseStatusCodePages();
+            app.UseSession();
 
             app.UseAuthorization();
 
