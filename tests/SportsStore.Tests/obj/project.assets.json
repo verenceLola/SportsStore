@@ -7956,8 +7956,8 @@
     },
     "SportsStore/1.0.0": {
       "type": "project",
-      "path": "../../SportsStore/SportsStore.csproj",
-      "msbuildProject": "../../SportsStore/SportsStore.csproj"
+      "path": "../../src/SportsStore/SportsStore.csproj",
+      "msbuildProject": "../../src/SportsStore/SportsStore.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7995,8 +7995,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "/Users/verencelola/Projects/SportsStore/SportsStore/SportsStore.csproj": {
-              "projectPath": "/Users/verencelola/Projects/SportsStore/SportsStore/SportsStore.csproj"
+            "/Users/verencelola/Projects/SportsStore/src/SportsStore/SportsStore.csproj": {
+              "projectPath": "/Users/verencelola/Projects/SportsStore/src/SportsStore/SportsStore.csproj"
             }
           }
         }

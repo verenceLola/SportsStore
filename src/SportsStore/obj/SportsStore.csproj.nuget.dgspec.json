@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/verencelola/Projects/SportsStore/SportsStore/SportsStore.csproj": {}
+    "/Users/verencelola/Projects/SportsStore/src/SportsStore/SportsStore.csproj": {}
   },
   "projects": {
-    "/Users/verencelola/Projects/SportsStore/SportsStore/SportsStore.csproj": {
+    "/Users/verencelola/Projects/SportsStore/src/SportsStore/SportsStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/verencelola/Projects/SportsStore/SportsStore/SportsStore.csproj",
+        "projectUniqueName": "/Users/verencelola/Projects/SportsStore/src/SportsStore/SportsStore.csproj",
         "projectName": "SportsStore",
-        "projectPath": "/Users/verencelola/Projects/SportsStore/SportsStore/SportsStore.csproj",
+        "projectPath": "/Users/verencelola/Projects/SportsStore/src/SportsStore/SportsStore.csproj",
         "packagesPath": "/Users/verencelola/.nuget/packages/",
-        "outputPath": "/Users/verencelola/Projects/SportsStore/SportsStore/obj/",
+        "outputPath": "/Users/verencelola/Projects/SportsStore/src/SportsStore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/verencelola/.nuget/NuGet/NuGet.Config"
