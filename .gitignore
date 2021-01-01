@@ -437,8 +437,4 @@ $RECYCLE.BIN/
 ## Visual Studio Code
 ##
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 src/SportsStore/bin/Debug/netcoreapp3.1/SportsStore.dll
