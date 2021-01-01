@@ -29,7 +29,6 @@ namespace SportsStore
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationDBContext>(options => options.UseMySQL(Configuration.GetConnectionString("SportsStore")));
             services.AddTransient<IProductRepository, EFProductRepository>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,9 +55,14 @@ namespace SportsStore
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "pagination",
+                    pattern: "Products/Page{page}",
+                    defaults: new { Controller = "Product", action = "List" });
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Product}/{action=List}/{id?}");
             });
+
             // SeedData.EnsurePopulated(app);
         }
     }
