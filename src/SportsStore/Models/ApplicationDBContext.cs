@@ -6,6 +6,6 @@ namespace SportsStore.Models
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options) { }
         public DbSet<Product> Products { set; get; }
-
+        public DbSet<Order> Orders { get; set; }
     }
 }
