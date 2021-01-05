@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+
 
 namespace SportsStore
 {
@@ -29,6 +31,8 @@ namespace SportsStore
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationDBContext>(options => options.UseMySQL(Configuration.GetConnectionString("SportsStore")));
             services.AddTransient<IProductRepository, EFProductRepository>();
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddMemoryCache();
             services.AddSession();
         }
