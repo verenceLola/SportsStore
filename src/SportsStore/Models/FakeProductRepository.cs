@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace SportsStore.Models
 {
@@ -9,5 +10,10 @@ namespace SportsStore.Models
             new Product {Name = "Surf Board", Price = 179},
             new Product {Name = "Running shoes", Price = 95},
         };
+
+        public void SaveProduct(Product product)
+        {
+            Console.WriteLine("Savng Fake Product");
+        }
     }
 }
