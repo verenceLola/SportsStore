@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using SportsStore.Models;
@@ -10,7 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
-
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace SportsStore
 {
@@ -29,6 +26,8 @@ namespace SportsStore
         {
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationDBContext>(options => options.UseMySQL(Configuration.GetConnectionString("SportsStore")));
+            services.AddDbContext<AppIdentityDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("SportsStoreIdentity")));
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>();
             services.AddTransient<IProductRepository, EFProductRepository>();
             services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -58,6 +57,7 @@ namespace SportsStore
             app.UseSession();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
@@ -86,7 +86,8 @@ namespace SportsStore
                 );
             });
 
-            // SeedData.EnsurePopulated(app);
+            IdentitySeedData.EnsurePopulated(app);
+            SeedData.EnsurePopulated(app);
         }
     }
 }
