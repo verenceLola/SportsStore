@@ -62,6 +62,11 @@ namespace SportsStore
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "Error",
+                    defaults: new {controller = "Error", action = "Error"},
+                    pattern: "Error"
+                );
+                endpoints.MapControllerRoute(
                     name: null,
                     pattern: "{category}/Page{page:int}",
                     defaults: new { controller = "Product", action = "List" });
